@@ -50,3 +50,4 @@ function chainageAvant(ListeRegle, BaseFait, objectif=null) {
 	};
 }
 
+module.export = chainageAvant;

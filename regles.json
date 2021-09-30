@@ -1,0 +1,30 @@
+[
+    {
+        "si" : ["poste responsabilité","facilité langues","parle néerlandais"],
+        "alors" : ["dynamique"]
+   }, 
+   {
+       "si":["facilité langues","parle anglais"],
+       "alors":["bonne adaptabilité"]
+   }, 
+   {
+       "si":["slave","dynamique"],
+       "alors":["bonne adaptabilité"]
+   }, 
+   {
+       "si":["poste responsabilité"],
+       "alors":["capacité leadership"]
+   }, 
+   {
+       "si":["facilité langues"],
+       "alors":["parle néelandais"]
+   },
+   {
+       "si":["bonne adaptabilité","capacité leadership"],
+       "alors":["accepté"]
+   }, 
+   {
+       "si":["capacité leadership","slave"],
+       "alors":["bonne adaptabilité"]
+   }
+]
