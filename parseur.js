@@ -25,4 +25,4 @@ var regles = data.map(regle=>{
 console.log(regles);
 
 const chainageAvant = require('./chainage-avant.js');
-console.log(chainageAvant);
+console.log(chainageAvant(regles,['slave','poste responsabilité'].map(k=>correspondances.indexOf(k)),correspondances.indexOf('accepté')));

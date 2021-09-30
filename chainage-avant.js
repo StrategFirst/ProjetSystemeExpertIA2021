@@ -56,45 +56,4 @@ function chainageAvant(ListeRegle, BaseFait, objectif=null) {
 	};
 }
 
-module.export = chainageAvant;
-
-console.log(
-	chainageAvant(
-		[
-			{
-				si: [1, 2, 3],
-				alors: [4]
-			},
-			{
-				si: [2, 5],
-				alors: [6]
-			},
-			{
-				si: [7, 4],
-				alors: [6]
-			},
-			{
-				si: [1],
-				alors: [8]
-			},
-			{
-				si: [2],
-				alors: [3]
-			},
-			{
-				si: [6, 8],
-				alors: [9]
-			},
-			{
-				si: [7],
-				alors: [2]
-			},
-			{
-				si: [8, 7],
-				alors: [6]
-			}
-		],
-		[7, 1],
-		9
-	)
-);
+module.exports = chainageAvant;
