@@ -13,7 +13,7 @@ data.forEach(regle => {
     regle.alors.forEach(fait=>{if(!correspondances.includes(fait))correspondances.push(fait); })
 });
 
-console.log(correspondances);
+//console.log(correspondances[0]);
 
 var regles = data.map(regle=>{
     const toID = fait=>correspondances.indexOf(fait);
@@ -22,7 +22,7 @@ var regles = data.map(regle=>{
     return regle;
 })
 
-console.log(regles);
+//console.log(regles);
 
 const chainageAvant = require('./chainage-avant.js');
-console.log(chainageAvant(regles,['slave','poste responsabilité'].map(k=>correspondances.indexOf(k)),correspondances.indexOf('accepté')));
+chainageAvant(regles,['slave','poste responsabilité'].map(k=>correspondances.indexOf(k)),correspondances.indexOf('accepté'),correspondances);
