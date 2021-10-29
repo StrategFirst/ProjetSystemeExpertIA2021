@@ -1,30 +1,138 @@
 [
-    {
-        "si" : ["poste responsabilité","facilité langues","parle néerlandais"],
-        "alors" : ["dynamique"]
-   }, 
-   {
-       "si":["facilité langues","parle anglais"],
-       "alors":["bonne adaptabilité"]
-   }, 
-   {
-       "si":["slave","dynamique"],
-       "alors":["bonne adaptabilité"]
-   }, 
-   {
-       "si":["poste responsabilité"],
-       "alors":["capacité leadership"]
-   }, 
-   {
-       "si":["facilité langues"],
-       "alors":["parle néelandais"]
-   },
-   {
-       "si":["bonne adaptabilité","capacité leadership"],
-       "alors":["accepté"]
-   }, 
-   {
-       "si":["capacité leadership","slave"],
-       "alors":["bonne adaptabilité"]
-   }
+	{
+		"si" : [
+			{
+				"cle": "poste responsabilité",
+				"valeur": true
+			},
+			{
+				"cle": "facilité langues",
+				"valeur": true
+			},
+			{
+				"cle": "parle néerlandais",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "dynamique",
+				"valeur": true
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "facilité langues",
+				"valeur": true
+			},
+			{
+				"cle": "parle anglais",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": true
+			}
+		]
+	},
+ 	{
+		"si" : [
+			{
+				"cle": "slave",
+				"valeur": true
+			},
+			{
+				"cle": "dynamique",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": true
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "poste responsabilité",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "poste responsabilité",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		]
+	}, 
+	{
+		"si" : [
+			{
+				"cle": "facilité langues",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "parle néerlandais",
+				"valeur": true
+			}
+		]
+	}, 
+	{
+		"si" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": true
+			},
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "accepté",
+				"valeur": true
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "slave",
+				"valeur": true
+			},
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": true
+			}
+		]
+	}
 ]
