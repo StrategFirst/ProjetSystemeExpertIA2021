@@ -13,4 +13,7 @@ let listeFait = get_listeFait( regles);
 let connaissance = {};
 listeFait.forEach( fait => connaissance[fait] = null );
 
-console.log( {listeFait , connaissance} );
+// Pour l'instant la base de fait est généré aléatoirement à partir de la liste complète de fait :
+let baseFait = listeFait.filter( () => Math.random() > 0.5 );
+
+console.log( {listeFait , connaissance, baseFait} );
