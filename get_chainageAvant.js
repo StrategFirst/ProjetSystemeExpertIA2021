@@ -4,6 +4,8 @@ module.exports = (connaissance,regles) => {
 	let nbAppliquer = -1;
 	let nbIteration = 0;
 
+	let liste = {};
+
 	while( nbAppliquer != 0) {
 		nbIteration++;
 
@@ -22,6 +24,7 @@ module.exports = (connaissance,regles) => {
 				} else {
 					console.logger.add(nbIteration,element.cle,element.valeur);
 					connaissance[ element.cle ] = element.valeur;
+					liste[ element.cle ] = true;
 				}
 			}
 		}
@@ -32,5 +35,5 @@ module.exports = (connaissance,regles) => {
 		nbAppliquer = applicable.length;
 	}
 
-	console.logger.end()
+	console.logger.end(connaissance,liste);
 }
