@@ -17,7 +17,7 @@ Tous deux contiennent une liste non vide d'un ou plusieurs éléments,
 chaque élément est un objet avec comme champs :
    - `cle` : contient le nom de la variable
    - `valeur` : contient la valeur attendu ( si prémisse ) ou obtenu ( si conclusion )
-   - `operator` ( optionnel ) : une chaine de caractère parmis la liste ci-dessous qui permettra la comparaison entre la clé et la valeur
+   - `operator` ( optionnel ) : une chaine de caractère parmis la liste ci-dessous qui permettra la comparaison entre la clé et la valeur ce hamps est reserve à la partie premisses.
       - `==` (défaut) égalité
 	  - `!=` Différence
 	  - `>=` Supérrieur ou égale
