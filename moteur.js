@@ -2,6 +2,9 @@
 require('./custom/function.js');
 require('./custom/log.js');
 
+// Récupération des paramètres
+require('./parameters.js');
+
 // Extrait tous les faits possible à partir d'une liste de règles (au format spécifié dans le README.md )
 const get_listeFait = require('./get_listeFait.js');
 
