@@ -1,10 +1,17 @@
+// Récupération des paramètres
+require('./parameters.js');
+
 // Implémentation de méthode custom pour factorisé le code :
 require('./custom/function.js');
 require('./custom/log.js');
 
-// Récupération des paramètres
-require('./parameters.js');
+// Vérification de la cohérence des règles
+require('./coherence.js');
 
+// Lancement du chainage avant
+require('./chainageAvant.js');
+
+/*
 // Extrait tous les faits possible à partir d'une liste de règles (au format spécifié dans le README.md )
 const get_listeFait = require('./get_listeFait.js');
 
@@ -23,4 +30,5 @@ listeFait.forEach( fait => connaissance[fait] = null );
 let baseFait = listeFait.filter( () => Math.random() > 0.5 );
 for(let fait of baseFait) connaissance[fait] = true;
 
-chainageAvant( connaissance , regles );
+chainageAvant( connaissance , regles );*/
+

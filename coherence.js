@@ -1,35 +1,40 @@
-const test = require('./regles.json');
+const rules = process.data.regles;
 
 // Pour chaque règle A
-for(let i=0 ; i<test.length ; i++) {
+for(let i=0 ; i<rules.length ; i++) {
 	// Pour chaque règle B différente de A
 	for(let j=0 ; j<i ; j++) {
 		// Pour chacune des conclusions de A et de B
-		for(let ir=0 ; ir<test[i].alors.length ; ir++ ) {
-			for(let jr=0 ; jr<test[j].alors.length ; jr++ ) {
+		for(let ir=0 ; ir<rules[i].alors.length ; ir++ ) {
+			for(let jr=0 ; jr<rules[j].alors.length ; jr++ ) {
 				// Si une conclusion de A et une conclusion de B s'appliquant sur une même clé mais avec des domaines de difinitions disjoints
 				if(
-					test[i].alors[ir].cle == test[j].alors[jr].cle
+					rules[i].alors[ir].cle == rules[j].alors[jr].cle
 					&&
 					( ! Intersection(
-						test[i].alors[ir],
-						test[j].alors[jr]
+						rules[i].alors[ir],
+						rules[j].alors[jr]
 					) )
 				) {
+					/* Affichage d'information */
+					console.debug( console.color.grey , `Vérification de deux règles aboutissant sur le fait : ${rules[i].alors[ir].cle}` , console.color.reset);
 					// Alors les deux règles (A,B) doivent avoirs chacune une prémisse sur une même clé mais avec des domaines de définitions disjoints
 					// et cela, afin d'empécher que l'on puisse attribué deux (ou plus) valeurs différentes a une clé avec un une même base de fait
 					let fix = false;
-					for(let is=0 ; is<test[i].si.length ; is++) {
-						for(let js=0 ; js<test[j].si.length ; js++) {
+					for(let is=0 ; is<rules[i].si.length ; is++) {
+						for(let js=0 ; js<rules[j].si.length ; js++) {
 							if(
-								test[i].si[is].cle == test[j].si[js].cle
+								rules[i].si[is].cle == rules[j].si[js].cle
 								&&
 								( ! Intersection(
-									test[i].si[is],
-									test[j].si[js]
+									rules[i].si[is],
+									rules[j].si[js]
 								) )
 							) {
 								fix = true;
+								/* Affichage d'information */
+								console.debug( console.color.grey ,`Les deux règles ne pourrons pas créé d'incohérence grace au prémisse avec le fait ${rules[i].si[is].cle}` , console.color.reset );
+								console.debug();
 								break;
 							}
 						}
@@ -39,9 +44,10 @@ for(let i=0 ; i<test.length ; i++) {
 					if( ! fix ) {
 						console.error('⚠');
 						console.error(' Les deux règles suivantes peuvent introduires des problèmes :');
-						console.error(` Le fait : ${test[i].alors[ir].cle} peut être obtenu via ces 2 règles : `);
-						console.error( test[i] , test[j] );
+						console.error(` Le fait : ${rules[i].alors[ir].cle} peut être obtenu via ces 2 règles : `);
+						console.log( rules[i] , rules[j] );
 						console.error(` mais à des valeurs différentes ! Il vous faut donc fixé au moins prémisse qui empêche l'obtentio de ces 2 règles simultanéments. `);
+						process.exit(1);
 					}
 				}
 			}
