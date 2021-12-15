@@ -30,10 +30,6 @@
 			{
 				"cle": "parle anglais",
 				"valeur": true
-			},
-			{
-				"cle": "slave",
-				"valeur": false
 			}
 		],
 		"alors" : [
