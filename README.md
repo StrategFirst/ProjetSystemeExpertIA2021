@@ -30,3 +30,11 @@ L'option `-r <nom de fichier>` ou `--regles <nom de fichier>` vous permet de fou
 elle est obligatoire
 
 L'option `-t {nothing|small|all}` ou `--trace {nothing|small|all}` vous permet de configuer la quantité de log afficher
+
+### Code de retour du programme
+
+ 0 : En cas de bonne execution
+
+ 1 : En cas d'incohérence dans les règles
+ 
+ 2 : En cas d'erreur au niveau des paramètres
