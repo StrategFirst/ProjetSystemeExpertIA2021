@@ -53,7 +53,7 @@
 		"alors" : [
 			{
 				"cle": "bonne adaptabilité",
-				"valeur": true
+				"valeur": false
 			}
 		]
 	},
@@ -121,7 +121,7 @@
 		"si" : [
 			{
 				"cle": "slave",
-				"valeur": true
+				"valeur": false
 			},
 			{
 				"cle": "capacité leadership",

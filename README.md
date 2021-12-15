@@ -9,6 +9,10 @@ Tous deux contiennent une liste non vide d'un ou plusieurs éléments,
 chaque élément est un objet avec comme champs :
    - `cle` : contient le nom de la variable
    - `valeur` : contient la valeur attendu ( si prémisse ) ou obtenu ( si conclusion )
-   - `not` ( optionnel ) : un booleen
-      - Dans une prémisse: si et seulement si `true` le champs doit être de valeur différente à celle indiquer 
-	  - Dans une conclusion : inutilisé
+   - `operator` ( optionnel ) : une chaine de caractère parmis la liste ci-dessous qui permettra la comparaison entre la clé et la valeur
+      - `==` (défaut) égalité
+	  - `!=` Différence
+	  - `>=` Supérrieur ou égale
+	  - `>`  Supérrieur strict
+	  - `<`  Inférrieur strict
+	  - `<=` Inférrieur ou égale
