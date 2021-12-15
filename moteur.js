@@ -1,6 +1,6 @@
 // Implémentation de méthode custom pour factorisé le code :
-require('./custom_function.js');
-console.logger = require('./custom_log.js');
+require('./custom/function.js');
+require('./custom/log.js');
 
 // Extrait tous les faits possible à partir d'une liste de règles (au format spécifié dans le README.md )
 const get_listeFait = require('./get_listeFait.js');
