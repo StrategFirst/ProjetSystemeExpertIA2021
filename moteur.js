@@ -7,6 +7,8 @@ const get_listeFait = require('./get_listeFait.js');
 
 const chainageAvant = require('./get_chainageAvant.js');
 
+const chainageArriere=require('./get_chainageArriere.js');
+
 // Récupération des règles dans le fichier regles.json
 let regles = require('./regles.json');
 
@@ -20,4 +22,13 @@ listeFait.forEach( fait => connaissance[fait] = null );
 let baseFait = listeFait.filter( () => Math.random() > 0.5 );
 for(let fait of baseFait) connaissance[fait] = true;
 
+
+
+console.log("Base de Fait initiale : ",['slave','poste responsabilité']);
+
+/*console.log("\t\tAVEC LA METHODE DU CHAINAGE AVANT ");
+
 chainageAvant( connaissance , regles );
+*/
+console.log("\t\tAVEC LA METHODE DU CHAINAGE ARRIERE ");
+chainageArriere(connaissance,['slave','poste responsabilité'],regles,"accepté")
