@@ -1,6 +1,8 @@
 # IA_Projet_2021
 Projet D'IA pour le S1 du M1 informatique
 
+Réalisé par Charles SAUVAGNAC, Mathieu TOULON
+
 ## Installation
 Le seul pré-requis est node.js en version `14.x.x` ou plus, (recommandé `16.13.0`)
 
