@@ -1,0 +1,142 @@
+[
+	{
+		"si" : [
+			{
+				"cle": "poste responsabilité",
+				"valeur": true
+			},
+			{
+				"cle": "facilité langues",
+				"valeur": true
+			},
+			{
+				"cle": "parle néerlandais",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "dynamique",
+				"valeur": true
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "facilité langues",
+				"valeur": true
+			},
+			{
+				"cle": "parle anglais",
+				"valeur": true
+			},
+			{
+				"cle": "slave",
+				"valeur": false
+			}
+		],
+		"alors" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": true
+			}
+		]
+	},
+ 	{
+		"si" : [
+			{
+				"cle": "slave",
+				"valeur": true
+			},
+			{
+				"cle": "dynamique",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": false
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "poste responsabilité",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "poste responsabilité",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		]
+	}, 
+	{
+		"si" : [
+			{
+				"cle": "facilité langues",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "parle néerlandais",
+				"valeur": true
+			}
+		]
+	}, 
+	{
+		"si" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": true
+			},
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "accepté",
+				"valeur": true
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "slave",
+				"valeur": false
+			},
+			{
+				"cle": "capacité leadership",
+				"valeur": true
+			}
+		],
+		"alors" : [
+			{
+				"cle": "bonne adaptabilité",
+				"valeur": true
+			}
+		]
+	}
+]
