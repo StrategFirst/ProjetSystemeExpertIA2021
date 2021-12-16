@@ -1,0 +1,52 @@
+[
+	{
+		"si" : [
+			{
+				"cle": "minuscule",
+				"valeur": true
+			},
+			{
+				"cle": "alphabet",
+				"valeur": "grec"
+			}
+		],
+		"alors" : [
+			{
+				"cle": "alpha",
+				"valeur": "α"
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "minuscule",
+				"valeur": false
+			},
+			{
+				"cle": "alphabet",
+				"valeur": "grec"
+			}
+		],
+		"alors" : [
+			{
+				"cle": "alpha",
+				"valeur": "A"
+			}
+		]
+	},
+	{
+		"si" : [
+			{
+				"cle": "alphabet",
+				"valeur": "grec"
+			}
+		],
+		"alors" : [
+			{
+				"cle": "minuscule",
+				"valeur": true
+			}
+		]
+	}
+]
