@@ -56,7 +56,7 @@ const resultat = recursChainageArriere(
 	process.data.basedefait ,
 	process.data.regles ,
 	process.data.regles.map( () => false ), 
-	[ { cle : process.data.target , valeur : true } ] );
+	[ { cle : process.data.target , valeur : process.data.value } ] );
 
 if( ! resultat ) {
 	console.log( 'Le fait demander n\'est pas obtenable' );

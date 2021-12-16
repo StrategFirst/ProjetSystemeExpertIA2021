@@ -26,6 +26,11 @@ try {
 		} else
 		if( process.argv[i] == '-c' || process.argv[i] == '--cible' ) {
 			process.data.target = process.argv[i+1];
+		} else
+		if( process.argv[i] == '-v' || process.argv[i] == '--valeurcible' ) {
+			process.data.value = process.argv[i+1];
+			if( process.data.value.match( /(true)|(false)/ ) ) process.data.value = (process.data.value == 'true'); else
+			if( process.data.value.match( /(-?)([0-9]+)/ ) ) process.data.value = (parseInt(process.data.value));
 		}
 	}
 

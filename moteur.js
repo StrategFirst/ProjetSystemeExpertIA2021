@@ -9,7 +9,7 @@ require('./custom/log.js');
 require('./coherence.js');
 
 // Lancement résolution
-if( process.data.target )
+if( process.data.target && process.data.value )
 	require('./chainageArriere.js');
 else
 	require('./chainageAvant.js');
