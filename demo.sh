@@ -13,7 +13,8 @@ echo -e "
 ║     Erreur 1      ║
 ║ $blink(suite : [enter])$reset ║
 ╚===================╝
-$reset"
+$reset
+≡ node moteur.js -r ./ReglesErreur1.json -bf ./BaseDeFait.json -t all"
 node moteur.js -r ./ReglesErreur1.json -bf ./BaseDeFait.json -t all
 read -n 1
 clear
@@ -24,7 +25,8 @@ echo -e "
 ║     Erreur 2      ║
 ║ $blink(suite : [enter])$reset ║
 ╚===================╝
-$reset"
+$reset
+≡ node moteur.js -r ./Regles.json -bf ./BaseDeFaitErreur2.json -t all"
 node moteur.js -r ./Regles.json -bf ./BaseDeFaitErreur2.json -t all
 read -n 1
 clear
@@ -35,7 +37,44 @@ echo -e "
 ║                   ║
 ║ $blink(suite : [enter])$reset ║
 ╚===================╝
-$reset"
+$reset
+≡ node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t all"
 node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t all
+read -n 1
+clear
+
+echo -e "
+╔===================╗
+║ Chaînage arrière1 ║
+║                   ║
+║ $blink(suite : [enter])$reset ║
+╚===================╝
+$reset
+≡ node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t nothing -c accepté"
+node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t nothing -c accepté
+read -n 1
+clear
+
+echo -e "
+╔===================╗
+║ Chaînage arrière2 ║
+║                   ║
+║ $blink(suite : [enter])$reset ║
+╚===================╝
+$reset
+≡ node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t small -c accepté"
+node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t small -c accepté
+read -n 1
+clear
+
+echo -e "
+╔===================╗
+║ Chaînage arrière3 ║
+║                   ║
+║ $blink(suite : [enter])$reset ║
+╚===================╝
+$reset
+≡ node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t all -c accepté"
+node moteur.js -r ./Regles.json -bf ./BaseDeFait.json -t all -c accepté
 read -n 1
 clear
