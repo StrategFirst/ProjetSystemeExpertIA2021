@@ -1,7 +1,7 @@
 let auMoinsUneRegle = true;
 let regleDejaUtilise = process.data.regles.map( () => false );
 
-let connaissance = process.data.basedefait.clone();
+let connaissance = process.data.basedefait;
 
 
 /* Affichage état initial : */

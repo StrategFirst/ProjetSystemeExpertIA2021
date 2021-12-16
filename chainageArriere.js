@@ -5,7 +5,7 @@ function recursChainageArriere( connaissance , regles , reglesUtilisee , faitObj
 		return true;
 	}
 	// On ne conserve dans les objectifs que les fait qui ne sont pas des connaissances
-	faitObjectif = faitObjectif.filter( fait => ! connaissance.contains( fait ) );
+	faitObjectif = faitObjectif.filter( fait => connaissance[ fait.cle ] === undefined );
 
 	// Pour chacune des règles
 	for(let i=0 ; i<reglesUtilisee.length ; i++) {
@@ -13,7 +13,7 @@ function recursChainageArriere( connaissance , regles , reglesUtilisee , faitObj
 		if( ! reglesUtilisee[i] ) {
 
 			// Et que cette règle contribue à notre recherche
-			if(	regles[i].alors.any( element => faitObjectif.any( target => target.cle == element.cle && target.valeur == element.valeur )) ) {
+			if(	regles[i].alors.some( element => faitObjectif.some( target => target.cle == element.cle && target.valeur == element.valeur )) ) {
 				console.debug('Descente sur la',i,'ème règle.');
 				// Alors on va chercher si on trouve recursivement une solution
 				// /!\ On va dupliquer les tableau pour éviter d'éditer les mêmes
@@ -48,8 +48,8 @@ function recursChainageArriere( connaissance , regles , reglesUtilisee , faitObj
 }
 
 const resultat = recursChainageArriere( 
-	process.data.basedefait.clone() ,
-	process.data.regles.clone() ,
+	process.data.basedefait ,
+	process.data.regles ,
 	process.data.regles.map( () => false ), 
 	[ process.data.target ] );
 
