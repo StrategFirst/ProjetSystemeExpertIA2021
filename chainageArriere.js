@@ -1,11 +1,11 @@
 
 function recursChainageArriere( connaissance , regles , reglesUtilisee , faitObjectif ) {
-	if( faitObjectif.length == 0 ) {
-		console.log( console.color.green , 'V' , console.color.grey , 'Succès solution trouvé !' , console.color.reset );
-		return true;
-	}
 	// On ne conserve dans les objectifs que les fait qui ne sont pas des connaissances
 	faitObjectif = faitObjectif.filter( fait => connaissance[ fait.cle ] === undefined );
+	if( faitObjectif.length == 0 ) {
+		console.log( console.color.lime , 'V' , console.color.grey , 'Succès solution trouvé !' , console.color.reset );
+		return true;
+	}
 
 	// Pour chacune des règles
 	for(let i=0 ; i<reglesUtilisee.length ; i++) {
@@ -13,14 +13,14 @@ function recursChainageArriere( connaissance , regles , reglesUtilisee , faitObj
 		if( ! reglesUtilisee[i] ) {
 
 			// Et que cette règle contribue à notre recherche
-			if(	regles[i].alors.some( element => faitObjectif.some( target => target.cle == element.cle && target.valeur == element.valeur )) ) {
+			if(	regles[i].alors.some( element => faitObjectif.some( target => { return target.cle == element.cle && target.valeur == element.valeur })) ) {
 				console.debug('Descente sur la',i,'ème règle.');
 				// Alors on va chercher si on trouve recursivement une solution
 				// /!\ On va dupliquer les tableau pour éviter d'éditer les mêmes
 				// connaissance identique
 				// regles identique
-				const reglesUtilisee_next = reglesUtilisee.clone();
-				const faitObjectif_next = faitObjectif.clone();
+				let reglesUtilisee_next = reglesUtilisee.clone();
+				let faitObjectif_next = faitObjectif.clone();
 
 				reglesUtilisee_next[i] = true;
 				faitObjectif_next = faitObjectif_next
@@ -32,7 +32,7 @@ function recursChainageArriere( connaissance , regles , reglesUtilisee , faitObj
 				let result = recursChainageArriere( connaissance , regles , reglesUtilisee_next , faitObjectif_next );
 				// Si cette branche était nous as trouvé une solution on s'arrête
 				if( result ) {
-					console.info( console.color.yellow , '-' , console.color.grey , `Règles utilisées :` , console.color.darkgrey , regles[i].toString().replace(/\n/g,' ') , console.color.reset );
+					console.info( console.color.yellow , '-' , console.color.grey , `Règles utilisées :` , console.color.darkgrey , regles[i] ,  console.color.reset );
 					return true;
 				}
 				// Sinon on continu de chercher d'autre règle qui nous fournisse la solution
@@ -46,12 +46,17 @@ function recursChainageArriere( connaissance , regles , reglesUtilisee , faitObj
 	return false;
 
 }
+/* Affichage état initial : */
+console.info();
+console.info( console.color.white , 'Base de fait :' , console.color.reset );
+Object.entries( process.data.basedefait ).forEach( ([cle,valeur]) => {console.info( console.color.white , '•' , console.color.lime , `${cle}`.padEnd(25) , console.color.grey , '=' ,  console.color.blue , `${valeur}` , console.color.reset )} );
+
 
 const resultat = recursChainageArriere( 
 	process.data.basedefait ,
 	process.data.regles ,
 	process.data.regles.map( () => false ), 
-	[ process.data.target ] );
+	[ { cle : process.data.target , valeur : true } ] );
 
 if( ! resultat ) {
 	console.log( 'Le fait demander n\'est pas obtenable' );
