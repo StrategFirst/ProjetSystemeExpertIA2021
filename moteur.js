@@ -8,5 +8,8 @@ require('./custom/log.js');
 // Vérification de la cohérence des règles
 require('./coherence.js');
 
-// Lancement du chainage avant
-require('./chainageAvant.js');
+// Lancement résolution
+if( process.data.target )
+	require('./chainageArriere.js');
+else
+	require('./chainageAvant.js');

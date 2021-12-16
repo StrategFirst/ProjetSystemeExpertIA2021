@@ -23,6 +23,9 @@ try {
 		} else
 		if( process.argv[i] == '-bf' || process.argv[i] == '--basedefait' ) {
 			process.data.basedefait = require( process.argv[i+1] );
+		} else
+		if( process.argv[i] == '-c' || process.argv[i] == '--cible' ) {
+			process.data.target = process.argv[i+1];
 		}
 	}
 
