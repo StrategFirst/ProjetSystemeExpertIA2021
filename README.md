@@ -31,6 +31,11 @@ elle est obligatoire
 
 L'option `-t {nothing|small|all}` ou `--trace {nothing|small|all}` vous permet de configuer la quantité de log afficher
 
+L'option `-bf <nom de fichier.json>` ou `--basedefait <nom de fichier.json>` vous permet de fournir au programme le fichier de base de fait
+elle est obligatoire
+
+L'option `-c <nom de fait>` ou `--cible <nom de fait>` vous permet de basculer en chainage arrière afin de savoir si le fait fourni est obtenable ou non
+
 ### Code de retour du programme
 
  0 : En cas de bonne execution
@@ -38,3 +43,6 @@ L'option `-t {nothing|small|all}` ou `--trace {nothing|small|all}` vous permet d
  1 : En cas d'incohérence dans les règles
  
  2 : En cas d'erreur au niveau des paramètres
+
+### Exemples
+Des exemples sont disponibles dans le fichier `demo.sh`
