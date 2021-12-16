@@ -46,3 +46,20 @@ L'option `-c <nom de fait>` ou `--cible <nom de fait>` vous permet de basculer e
 
 ### Exemples
 Des exemples sont disponibles dans le fichier `demo.sh`
+
+Quelques exemples suplémentaires :
+
+- Chainage arrière echec
+	```bash
+	node moteur.js -r ./exempleRegles.json -bf ./exempleBaseDeFait.json -t all -c alpha -v A
+	```
+
+- Chainage arrière réussite
+	```bash
+	node moteur.js -r ./exempleRegles.json -bf ./exempleBaseDeFait.json -t all -c alpha -v α
+	```
+
+- Chainage avant
+	```bash
+	node moteur.js -r ./exempleRegles.json -bf ./exempleBaseDeFait.json -t all
+	```
